@@ -10,18 +10,18 @@ on:
   workflow_dispatch:
     inputs:
       Name:
-        description: Залить файлы БОУ ООШ с. Большая Малышевка
+        description: Залить файлыа СП ДС ГБОУ ООШ с. Большая Малышевка
         required: true
-        default: 'Залить файлы ГБОУ ООШ с. Большая Малышевка'
+        default: 'Залить файлыа СП ДС ГБОУ ООШ с. Большая Малышевка'
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    name: ГБОУ ООШ с. Большая Малышевка
+    name: СП ДС ГБОУ ООШ с. Большая Малышевка
     steps:
       - name: Проверка репозитория
         uses: actions/checkout@v4.1.1
 
-      - name: Заливка на ГБОУ ООШ с. Большая Малышевка
+      - name: Заливка на СП ДС ГБОУ ООШ с. Большая Малышевка
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -32,7 +32,7 @@ jobs:
           state-name: .status.json
           exclude: |
             **/viewer/**
-      - name: Удаление статус файла c ГБОУ ООШ с. Большая Малышевка
+      - name: Удаление статус файла c СП ДС ГБОУ ООШ с. Большая Малышевка
         uses: StephanThierry/ftp-delete-action@v2.1
         with:
           host: ${{ secrets.FTP_SERVER }}

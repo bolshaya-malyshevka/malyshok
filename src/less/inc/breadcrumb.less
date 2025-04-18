@@ -1,0 +1,19 @@
+.breadcrumb {
+	margin: 0;
+	font-weight: 300;
+	font-size: 0.85em;
+	> li {
+		display: inline;
+		+ li{
+			&:before {
+				padding-right: 0px;
+			}
+		}
+	}
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

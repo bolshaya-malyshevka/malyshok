@@ -1,0 +1,112 @@
+@charset "UTF-8";
+.clearfix::after,
+.clearfix::before {
+  display: table;
+  content: "";
+  clear: both;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+body {
+  margin: unset;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  font-family: 'Calibri', 'Tahoma', 'Noto Color Emoji', Tofu, sans-serif;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #333333;
+}
+body main,
+body header,
+body footer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+body main {
+  -ms-flex: 1 0 auto;
+      flex: 1 0 auto;
+}
+body header,
+body footer {
+  -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+}
+body footer p:last-child {
+  margin-bottom: unset;
+}
+body a {
+  text-decoration: unset;
+}
+body a:hover,
+body a:focus {
+  text-decoration: underline;
+}
+body a,
+body a:hover,
+body a:focus,
+body a:active {
+  color: #0098ff;
+}
+.container,
+.container-full {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: relative;
+  min-height: 100%;
+  -ms-flex: 1 0 auto;
+      flex: 1 0 auto;
+}
+.container::after,
+.container-full::after,
+.container::before,
+.container-full::before {
+  display: table;
+  content: "";
+  clear: both;
+}
+[data-plugin] {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: relative;
+  min-height: 100%;
+  -ms-flex: 1 0 auto;
+      flex: 1 0 auto;
+}
+.emoji-wrapp {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: relative;
+  min-height: 100%;
+  -ms-flex: 1 0 auto;
+      flex: 1 0 auto;
+}
+.emoji-wrapp .emoji-tabs {
+  -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+}
+.emoji-wrapp .emoji-content {
+  -ms-flex: 1 0 auto;
+      flex: 1 0 auto;
+}

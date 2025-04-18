@@ -1,0 +1,68 @@
+<div class="headerpage"><div class="header-page container"><div class="header-group"><p class="site-title"><@IF:[*id:is(1)*]>[(site_name)]<@ELSE><a href="[(site_url)]">[(site_name)]</a><@ENDIF></p><p class="site-description">[(site_description)]</p><div id="search"><form action="/search/" method="GET" data-id="search-form"><input type="text" name="search" value="[!$_GET['search']!]" placeholder="Поиск" required="required" /><button class="btn icon-search" type="submit"></button></form></div></div></div><div class="header-slick"><@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]>[[multiTV?
+	&fromJson=`[(sliders)]`
+	&tvName=`sliders`
+]]<@ENDIF><@ENDIF><@IF:[*template:neq(11)*]>[!DLMenu?
+	&outerTpl=`@CODE: <div class="header-navigation bvi-no-styles"><nav class="bvi-no-styles" role="navigation" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><button type="button" class="bvi-no-styles"><i class="icon-menu-open bvi-no-styles"></i></button><ul class="[+classNames+] bvi-no-styles" itemprop="about" itemscope itemtype="http://schema.org/ItemList">[+wrap+]</ul></nav></div>`
+	&rowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
+	&rowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
+	&parentRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+	&parentRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+	&parentRowActiveTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+	&innerTpl=`@CODE: <ul class="[+classNames+] bvi-no-styles">[+wrap+]</ul>`
+	&innerRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
+	&innerRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
+	&parents=`0`
+	&addWhereList=`hidemenu = 0 AND parent NOT IN(2) AND parent NOT IN(69)`
+	&showParent=`1`
+	&innerClass=`inner`
+	&outerClass=`outer`
+	&rowClass=``
+	&firstClass=``
+	&lastClass=``
+	&levelClass=``
+	&webLinkClass=`web-link`
+	&parentClass=`parent`
+	&hereClass=`here`
+	&activeClass=`active`
+	&oddClass=``
+	&evenClass=``
+	&stateClass=`stateClass`
+	&urlScheme=`full`
+	&maxDepth=`2`
+!]<@IF:[*id:neq(1)*]><@IF:[*parent:neq(3)*]>[!DLCrumbs
+	&showCurrent=`1`
+	&ownerTPL=`@CODE:<nav><ul class="breadcrumb bvi-no-styles" aria-label="Breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">[+crumbs.wrap+]</ul></nav>`
+!]<@ENDIF><@ENDIF><@ELSE>
+[!DLMenu?
+	&outerTpl=`@CODE: <div class="header-navigation bvi-no-styles"><nav class="bvi-no-styles" role="navigation"><button type="button" class="bvi-no-styles"><i class="icon-menu-open bvi-no-styles"></i></button><ul class="[+classNames+] bvi-no-styles">[+wrap+]</ul></nav></div>`
+	&rowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a></li>`
+	&parentRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+	&parentRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+	&parentRowActiveTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+	&innerTpl=`@CODE: <ul class="[+classNames+] bvi-no-styles">[+wrap+]</ul>`
+	&innerRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a></li>`
+	&innerRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a></li>`
+	&parents=`0`
+	&addWhereList=`hidemenu = 0 AND parent NOT IN(2) AND parent NOT IN(69)`
+	&showParent=`1`
+	&innerClass=`inner`
+	&outerClass=`outer`
+	&rowClass=``
+	&firstClass=``
+	&lastClass=``
+	&levelClass=``
+	&webLinkClass=`web-link`
+	&parentClass=`parent`
+	&hereClass=`here`
+	&activeClass=`active`
+	&oddClass=``
+	&evenClass=``
+	&stateClass=`stateClass`
+	&urlScheme=`full`
+	&maxDepth=`2`
+!][!DLCrumbs
+	&showCurrent=`1`
+	&tpl=`@CODE:<li><a href="[+url+]" title="[+e.title+]"><span>[+title+]</span></a></li>`
+	&tplCurrent=`@CODE:<li class="active"><span><span>[+title+]</span></span></li>`
+	&ownerTPL=`@CODE:<nav><ul class="breadcrumb bvi-no-styles" aria-label="Breadcrumb">[+crumbs.wrap+]</ul></nav>`
+!]<@ENDIF></div></div>

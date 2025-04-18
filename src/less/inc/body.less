@@ -1,0 +1,51 @@
+body {
+	padding-bottom: 40px;
+	@media screen and (max-width: 1150px) {
+		padding-bottom: unset;
+	}
+}
+.body {
+	max-width: 1140px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+	min-height: ~'calc(100vh - 80px)';
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	box-shadow: 0 0 0px 1px #84a9e6;
+	transition: margin .3s ease;
+	> header,
+	> fotter {
+		flex: 0 0 auto;
+	}
+	> .main {
+		flex: 1 0 auto;
+		padding-top: 30px;
+		padding-left: var(--pd);
+		padding-right: var(--pd);
+		padding-bottom: 2em;
+		transition: padding .3s ease;
+	}
+	@media screen and (max-width: 1150px) {
+		margin-top: unset;
+		min-height: 100vh;
+		> .main {
+			padding-left: unset;
+			padding-right: unset;
+		}
+	}
+}
+.bvi-active {
+	.body {
+		margin-top: unset;
+		margin-bottom: unset;
+	}
+	.bvi-panel {
+		margin-bottom: 0;
+	}
+}
+body .bvi-body {
+	padding: 0;
+}

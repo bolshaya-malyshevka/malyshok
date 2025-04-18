@@ -1,0 +1,85 @@
+.widget
+	article.widget_director
+		header.widget_director-header
+			|<@IF:[(director_position:isnotempty)]>
+			h3.widget_director-title
+				strong
+					|[(director_position)]:
+			|<@ENDIF><@IF:[(director:isnotempty)]>
+			p.widget_director-name
+				strong
+					|[(director)]
+			|<@ENDIF><@IF:[(director_photo:isnotempty)]>
+			p.widget_director-header-img
+				img(src!="[[thumb? &input=`[(director_photo)]` &options=`w=270,h=270,zc=C`]]" alt="[(director)]" loading="lazy")
+				|<@IF:[(director:isnotempty}]>
+				span.bvi-caption-alt
+					|[(director)]
+				|<@ENDIF>
+			|<@ENDIF>
+		.widget_director-content
+			dl
+				|<@IF:[(address:isnotempty)]>
+				dt
+					p
+						strong
+							|Адрес:
+				dd
+					p
+						i.icon-home
+						|[(address)]
+				|<@ENDIF><@IF:[(phones:isnotempty)]>
+				dt
+					p
+						strong
+							|Телефон:
+				dd
+					p
+						i.icon-phone
+						|[(phones:nl2br)]
+				|<@ENDIF><@IF:[(email:isnotempty)]>
+				dt
+					p
+						strong
+							|Электронный адрес:
+				dd
+					p
+						i.icon-email
+						|{obfuscate}[(email)]{/obfuscate}
+				|<@ENDIF>
+				dt
+					p
+						strong
+							|Сайт:
+				dd
+					p
+						i.icon-home
+						a(href="[(site_url)]" target="_blank")
+							|[(site_url)]
+					|<@IF:[(vk_link_group:isnotempty)]>
+					p
+						i.icon-vk
+						a(href="[(vk_link_group)]" target="_blank")
+							|Группа в ВКонтакте
+					|<@ENDIF>
+					|<@IF:[(ok_link_group:isnotempty)]>
+					p
+						i.icon-ok
+						a(href="[(ok_link_group)]" target="_blank")
+							|Группа в Одноклассеиках
+					|<@ENDIF>
+					|<@IF:[(rutube_link_group:isnotempty)]>
+					p
+						i.icon-rutube
+						a(href="[(rutube_link_group)]" target="_blank")
+							|Канал на RUTUBE
+					|<@ENDIF>
+					|<@IF:[(tlg_link_group:isnotempty)]>
+					p
+						i.icon-telegram
+						a(href="[(tlg_link_group)]" target="_blank")
+							|Канал в Telegram
+					|<@ENDIF>
+			p.text-center
+				button.callme-btn.btn.btn-default(type="button" data-trigger="sendbot")
+					|ФОРМА ОБРАТНОЙ СВЯЗИ

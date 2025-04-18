@@ -1,0 +1,26 @@
+.entry {
+	&-title {
+		margin: 0;
+		line-height: 1.2;
+		margin-bottom: 0.8em;
+		//@media(max-width: 710px) {
+		//	font-size: calc(100vw / 24);
+		//}
+	}
+	&-content {
+		&-time,
+		&-author {
+			.text-right();
+		}
+		&-time {
+			margin-bottom: 0;
+			time {
+				font-weight: 300;
+				font-size: 0.8em;
+			}
+		}
+		.embed {
+			margin-bottom: 10px;
+		}
+	}
+}

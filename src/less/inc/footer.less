@@ -1,0 +1,119 @@
+footer {
+	&#colophon {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		background-color: #3a3d41;
+		color: #999;
+		a {
+			&,
+			&:hover,
+			&:focus {
+				text-decoration: none !important;
+			}
+			&,
+			&:focus {
+				color: #ddd;
+			}
+			&:hover {
+				color: #fff;
+			}
+		}
+		@media screen and (max-width: 810px) {
+			padding-top: var(--pd);
+			padding-bottom: var(--pd);
+		}
+	}
+	&.footer{}
+}
+.footer{
+	&-row {
+		margin-left: -1 * @pd;
+		margin-right: -1 * @pd;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		.icon-rss {
+			&::before {
+				font-size: 32px !important;
+			}
+		}
+	}
+	&-col {
+		&-left,
+		&-center,
+		&-right {
+			padding-left: var(--pd);
+			padding-right: var(--pd);
+			p {
+				&:last-child {
+					margin-bottom: unset;
+				}
+			}
+		}
+		&-left,
+		&-right {
+			width: 80%;
+		}
+		&-center {
+			width: 20%;
+		}
+		&-left {
+			text-align: left;
+			&,
+			a {
+				font-size: 16px !important;
+			}
+		}
+		&-center {
+			text-align: center;
+		}
+		&-right {
+			text-align: right;
+			align-self: flex-end;
+			&,
+			a {
+				font-size: 12px !important;
+			}
+		}
+	}
+	@media screen and (max-width: 1170px) {
+		//margin-left: -1 * @pd;
+		//margin-right: -1 * @pd;
+	}
+	@media screen and (max-width: 810px) {
+		&-row {
+			flex-direction: column;
+			margin-top: 10px;
+		}
+		&-col {
+			&-left,
+			&-center,
+			&-right {
+				width: unset;
+				flex: 1;
+				text-align: center;
+				p {
+					&:last-child {
+						margin-bottom: 0.65em;
+					}
+				}
+			}
+		}
+	}
+}
+body .bvi-body {
+	.footer {
+		&-col {
+			&-left {
+				.bvi-no-styles {
+					font-size: 16px !important;
+				}
+			}
+			&-right {
+				.bvi-no-styles {
+					font-size: 12px !important;
+				}
+			}
+		}
+	}
+}

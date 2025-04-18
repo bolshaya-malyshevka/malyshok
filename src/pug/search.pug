@@ -1,0 +1,46 @@
+doctype html
+html(lang="ru" prefix="og: http://ogp.me/ns#")
+	include inc/head.pug
+	body
+		.body.bvi-no-styles
+			header#masthead(role="banner")
+				include tpl/header.pug
+			.main
+				.primary
+					#content(role="main")
+						article(id!="page-[*id*]" class!="page page-[*id*] type-page")
+							header.entry-header
+								h1.entry-title
+									|[*longtitle:ifempty=`[*pagetitle*]`*]
+							.entry-content
+								|[*content*][!evoSearch?
+								|	&display=`5`
+								|	&paginate=`pages`
+								|	&statTpl= `<p class="srch_res_info">По запросу <strong>[+stat_request+]</strong> найдено <strong>[+stat_total+]</strong> документов.</p>`
+								|	&noResult=`<p class="srch_res_info">По запросу <u>[+stat_request+]</u> ничего не найдено. Смягчите условия поиска</p>`
+								|	&ownerTPL=`@CODE: <p class="srch_res_info">По запросу <u>[+stat_request+]</u></p><div class="srch_res">[+dl.wrap+]</div>`
+								|	&tpl=`@CODE: <article class="srch_res_one"><header><h4><a href="[+url+]">[+title+]</a></h4></header><div class="srch_res_one_content"><p class="srch_ext">[+extract+]</p></div></article>`
+								|	&TplNextP=``
+								|	&TplPrevP=``
+								|   &paginationMeta=`1`
+								|   &TplWrapPaginate=`@CODE: <div class="paginate text-center"><ul class="pagination pagination--list">[+wrap+]</ul></div>`
+								|   &TplNextP=`@CODE: <li class="pagination--list--item next"><a role="button" class="icon-next" href="[+link+]"></a></li>`
+								|   &TplNextI=`@CODE: <li class="pagination--list--item next disabled"><span role="button" class="icon-next"></span></li>`
+								|   &TplPrevP=`@CODE: <li class="pagination--list--item prev"><a role="button" class="icon-prev" href="[+link+]"></a></li>`
+								|   &TplPrevI=`@CODE: <li class="pagination--list--item prev disabled"><span role="button" class="icon-prev"></span></li>`
+								|   &TplPage=`@CODE: <li class="pagination--list--item"><a role="button" href="[+link+]">[+num+]</a></li>`
+								|   &TplCurrentPage=`@CODE: <li class="pagination--list--item active"><span role="button">[+num+]</span></li>`
+								|   &TplDotsPage=`@CODE:<li class="pagination--list--item dots"><span role="button">...</span></li>`
+								|!][+pages+]
+				//- Сайтбар
+				.secondary#secondary(role="complementary")
+					include tpl/widgets.pug
+				//- Вывод ссылок на Гос. Сайты
+				.main-footer
+					include tpl/sites_link.pug
+				//- Форма
+				include tpl/sendbot.pug
+			//- Подвал
+			include tpl/footer.pug
+		//- Скрипты
+		include inc/body_close.pug

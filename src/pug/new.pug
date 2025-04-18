@@ -1,0 +1,37 @@
+doctype html
+html(lang="ru" prefix="og: http://ogp.me/ns#")
+	include inc/head.pug
+	body
+		.body.bvi-no-styles
+			header#masthead(role="banner")
+				include tpl/header.pug
+			.main
+				.primary
+					#content(role="main")
+						article(id!="page-[*id*]" class!="page page-[*id*] type-page")
+							header.entry-header
+								h1.entry-title
+									|[*longtitle:ifempty=`[*pagetitle*]`*]
+							.entry-content
+								p.entry-content-time
+									strong
+										em
+											|[!dateRus? &time=`[*news_date*]`!]
+								|[*content*][*EvoVideo:is=``:then=` `:else=`{{@FILE assets/templates/projectsoft/tpl/get_evo_video.html}}`*][[PageBuilder]]
+								p.entry-content-author
+									strong
+										em
+											|[*news_person*]
+						include inc/share.pug
+				//- Сайтбар
+				.secondary#secondary(role="complementary")
+					include tpl/widgets.pug
+				//- Вывод ссылок на Гос. Сайты
+				.main-footer
+					include tpl/sites_link.pug
+				//- Форма
+				include tpl/sendbot.pug
+			//- Подвал
+			include tpl/footer.pug
+		//- Скрипты
+		include inc/body_close.pug

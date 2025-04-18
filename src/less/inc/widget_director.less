@@ -1,0 +1,62 @@
+.widget {
+	&_director {
+		&-header {
+			font-size: 1.2em;
+			&-img {
+				position: relative;
+				img {
+					aspect-ratio: ~'1 / 1';
+				}
+			}
+		}
+		&-title {
+
+		}
+		&-name {
+			line-height: 1.2;
+		}
+		&-content {
+			dl {
+				dt {
+					p {
+						margin-bottom: unset;
+					}
+				}
+				dd {
+					margin-left: 40px;
+					p {
+						position: relative;
+						margin-bottom: unset;
+						&:last-child {
+							margin-bottom: revert;
+						}
+						i {
+							position: absolute;
+							left: -40px;
+							font-size: 1.4em;
+							line-height: 1;
+							width: 40px;
+							text-align: center;
+						}
+					}
+				}
+			}
+			a {
+				word-break: break-all;
+			}
+		}
+	}
+}
+body .bvi-body[data-bvi-images=false] {
+	.widget {
+		&_director {
+			&-header {
+				font-size: 1.2em;
+				.bvi-caption-alt {
+					display: block;
+					min-height: 100%;
+				}
+			}
+		}
+	}
+}

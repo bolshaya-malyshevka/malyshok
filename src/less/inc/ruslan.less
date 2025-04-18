@@ -1,0 +1,17 @@
+.ruslan {
+	font-family: 'Ruslan Display';
+}
+p {
+	&.ruslan {
+		font-size: 2em;
+	}
+}
+body {
+	.bvi-body[data-bvi-fontsize] {
+		p {
+			&.ruslan {
+				font-size: 150% !important;
+			}
+		}
+	}
+}

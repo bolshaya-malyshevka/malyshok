@@ -1,0 +1,48 @@
+doctype xml
+xsl:stylesheet(xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sitemap="http://www.sitemaps.org/schemas/sitemap/0.9" version="1.0" exclude-result-prefixes="sitemap")
+	xsl:output(method="html" encoding="UTF-8" indent="yes")
+	xsl:template(match="/")
+		html(lang="ru-RU" prefix="og: http://ogp.me/ns#")
+			include ../inc/head.pug
+			body
+				.body
+					header#masthead(role="banner")
+						include ../tpl/header.pug
+					.main
+						#content(role="main")
+							article(id!="page-[*id*]" class!="page page-[*id*] type-page clearfix")
+								header.entry-header
+									h1.entry-title
+										|[*longtitle:ifempty=`[*pagetitle*]`*]
+								.entry-content
+									p.text Количество URL: 
+										xsl:value-of(select="count( sitemap:urlset/sitemap:url )")
+									.table-responsive
+										table.table.table-bordered
+											thead
+												tr
+													th.loc URL
+													th.lastmod Последнее изменение
+													th.changefreq Изменить частоту
+													th.priority Приоритет
+											tbody
+												xsl:for-each(select="sitemap:urlset/sitemap:url")
+													tr
+														td.loc
+															a(href!="{sitemap:loc}")
+																xsl:value-of(select="sitemap:loc")
+														td.lastmod
+															xsl:value-of(select="sitemap:lastmod")
+														td.changefreq
+															xsl:value-of(select="sitemap:changefreq")
+														td.priority
+															xsl:value-of(select="sitemap:priority")
+						//- Вывод ссылок на Гос. Сайты
+						.main-footer
+							include ../tpl/sites_link.pug
+						//- Форма
+						include ../tpl/sendbot.pug
+					//- Подвал
+					include ../tpl/footer.pug
+				//- Скрипты
+				include ../inc/body_close.pug

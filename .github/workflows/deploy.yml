@@ -1,0 +1,69 @@
+name: Залить файлы на СП ДС ГБОУ ООШ с. Большая Малышевка
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    # - cron: "0 1 * * 1"
+    - cron: "0 1 1,15 * *"
+  workflow_dispatch:
+    inputs:
+      Name:
+        description: Залить файлы БОУ ООШ с. Большая Малышевка
+        required: true
+        default: 'Залить файлы ГБОУ ООШ с. Большая Малышевка'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: ГБОУ ООШ с. Большая Малышевка
+    steps:
+      - name: Проверка репозитория
+        uses: actions/checkout@v4.1.1
+
+      - name: Заливка на ГБОУ ООШ с. Большая Малышевка
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DIR }}
+          local-dir: ./site/
+          state-name: .status.json
+          exclude: |
+            **/viewer/**
+      - name: Удаление статус файла c ГБОУ ООШ с. Большая Малышевка
+        uses: StephanThierry/ftp-delete-action@v2.1
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          workingDir: ${{ secrets.FTP_DIR }}
+          remoteFiles: ".status.json;assets/cache/docid_*.php"
+          ignoreSSL: 1
+  #deploy_sp:
+  #  runs-on: ubuntu-latest
+  #  name: СП ДС ГБОУ ООШ с. Большая Малышевка
+  #  steps:
+  #    - name: Проверка репозитория
+  #      uses: actions/checkout@v4.1.1
+  #    - name: Заливка на СП ДС ГБОУ ООШ с. Большая Малышевка
+  #      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+  #      with:
+  #        server: ${{ secrets.FTP_SERVER_SP }}
+  #        username: ${{ secrets.FTP_USERNAME_SP }}
+  #        password: ${{ secrets.FTP_PASSWORD_SP }}
+  #        server-dir: ${{ secrets.FTP_DIR_SP }}
+  #        local-dir: ./site/
+  #        state-name: .status.json
+  #        exclude: |
+  #          **/viewer/**
+  #    - name: Удаление статус файла c СП ДС ГБОУ ООШ с. Большая Малышевка
+  #      uses: StephanThierry/ftp-delete-action@v2.1
+  #      with:
+  #        host: ${{ secrets.FTP_SERVER_SP }}
+  #        user: ${{ secrets.FTP_USERNAME_SP }}
+  #        password: ${{ secrets.FTP_PASSWORD_SP }}
+  #        workingDir: ${{ secrets.FTP_DIR_SP }}
+  #        remoteFiles: ".status.json;assets/cache/docid_*.php"
+  #        ignoreSSL: 1

@@ -1,0 +1,107 @@
+<!DOCTYPE html><html lang="ru" prefix="og: http://ogp.me/ns#"><head><base href="[(site_url)]"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="cmsmagazine" content="d8e7426ec72ad3e4ea38b09ebf01284"><meta name="yandex-verification" content="[(yandex_verification)]"><meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE"><meta name="color-scheme" content="only light"><meta name="theme-color" content="#ffffff"><title>[*titl*]</title>[*noIndex*]<meta name="title" content="[*titl:notags:strip*]"><meta name="description" content="[*desc:notags:strip*]"><meta name="keywords" content="[*keyw:notags:strip*]"><meta name="author" content="[(site_name)]"><meta name="og:url" content="[(site_url)][~[*id*]~]"><meta property="og:type" content="website"><meta name="og:title" content="[*titl:notags:strip*]"><meta name="og:description" content="[*desc:notags:strip*]">[[ogImage]]<meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="shortcut icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="[(site_name)]"><link rel="manifest" href="/site.webmanifest"><link type="text/css" rel="stylesheet" href="/assets/templates/projectsoft/css/bvi.min.css?17397899038482"><link type="text/css" rel="stylesheet" href="/assets/templates/projectsoft/css/main.min.css?17397899038482"><@IF:[*template:neq(11)*]><link rel="alternate" type="application/rss+xml" title="RSS-лента [(site_name)]" href="/rss.xml"><@ENDIF><@IF:[*id:is(2)*]><link rel="canonical" href="[(site_url)][~[*id*]~]"><@ENDIF></head><body><div class="body bvi-no-styles"><header id="masthead" role="banner"><div class="headerpage"><div class="header-page container"><div class="header-group"><p class="site-title"><@IF:[*id:is(1)*]>[(site_name)]<@ELSE><a href="[(site_url)]">[(site_name)]</a><@ENDIF></p><p class="site-description">[(site_description)]</p><div id="search"><form action="/search/" method="GET" data-id="search-form"><input type="text" name="search" value="[!$_GET['search']!]" placeholder="Поиск" required="required" /><button class="btn icon-search" type="submit"></button></form></div></div></div><div class="header-slick"><@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]>[[multiTV?
+	&fromJson=`[(sliders)]`
+	&tvName=`sliders`
+]]<@ENDIF><@ENDIF><@IF:[*template:neq(11)*]>[!DLMenu?
+	&outerTpl=`@CODE: <div class="header-navigation bvi-no-styles"><nav class="bvi-no-styles" role="navigation" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><button type="button" class="bvi-no-styles"><i class="icon-menu-open bvi-no-styles"></i></button><ul class="[+classNames+] bvi-no-styles" itemprop="about" itemscope itemtype="http://schema.org/ItemList">[+wrap+]</ul></nav></div>`
+	&rowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
+	&rowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
+	&parentRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+	&parentRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+	&parentRowActiveTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+	&innerTpl=`@CODE: <ul class="[+classNames+] bvi-no-styles">[+wrap+]</ul>`
+	&innerRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
+	&innerRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
+	&parents=`0`
+	&addWhereList=`hidemenu = 0 AND parent NOT IN(2) AND parent NOT IN(69)`
+	&showParent=`1`
+	&innerClass=`inner`
+	&outerClass=`outer`
+	&rowClass=``
+	&firstClass=``
+	&lastClass=``
+	&levelClass=``
+	&webLinkClass=`web-link`
+	&parentClass=`parent`
+	&hereClass=`here`
+	&activeClass=`active`
+	&oddClass=``
+	&evenClass=``
+	&stateClass=`stateClass`
+	&urlScheme=`full`
+	&maxDepth=`2`
+!]<@IF:[*id:neq(1)*]><@IF:[*parent:neq(3)*]>[!DLCrumbs
+	&showCurrent=`1`
+	&ownerTPL=`@CODE:<nav><ul class="breadcrumb bvi-no-styles" aria-label="Breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">[+crumbs.wrap+]</ul></nav>`
+!]<@ENDIF><@ENDIF><@ELSE>
+[!DLMenu?
+	&outerTpl=`@CODE: <div class="header-navigation bvi-no-styles"><nav class="bvi-no-styles" role="navigation"><button type="button" class="bvi-no-styles"><i class="icon-menu-open bvi-no-styles"></i></button><ul class="[+classNames+] bvi-no-styles">[+wrap+]</ul></nav></div>`
+	&rowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a></li>`
+	&parentRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+	&parentRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+	&parentRowActiveTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+	&innerTpl=`@CODE: <ul class="[+classNames+] bvi-no-styles">[+wrap+]</ul>`
+	&innerRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a></li>`
+	&innerRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a></li>`
+	&parents=`0`
+	&addWhereList=`hidemenu = 0 AND parent NOT IN(2) AND parent NOT IN(69)`
+	&showParent=`1`
+	&innerClass=`inner`
+	&outerClass=`outer`
+	&rowClass=``
+	&firstClass=``
+	&lastClass=``
+	&levelClass=``
+	&webLinkClass=`web-link`
+	&parentClass=`parent`
+	&hereClass=`here`
+	&activeClass=`active`
+	&oddClass=``
+	&evenClass=``
+	&stateClass=`stateClass`
+	&urlScheme=`full`
+	&maxDepth=`2`
+!][!DLCrumbs
+	&showCurrent=`1`
+	&tpl=`@CODE:<li><a href="[+url+]" title="[+e.title+]"><span>[+title+]</span></a></li>`
+	&tplCurrent=`@CODE:<li class="active"><span><span>[+title+]</span></span></li>`
+	&ownerTPL=`@CODE:<nav><ul class="breadcrumb bvi-no-styles" aria-label="Breadcrumb">[+crumbs.wrap+]</ul></nav>`
+!]<@ENDIF></div></div></header><div class="main"><div class="primary"><div id="content" role="main"><article class="page page-[*id*] type-page" id="page-[*id*]"><header class="entry-header"><h1 class="entry-title">[*longtitle:ifempty=`[*pagetitle*]`*]</h1></header><div class="entry-content">[*content*][!evoSearch?
+	&display=`5`
+	&paginate=`pages`
+	&statTpl= `<p class="srch_res_info">По запросу <strong>[+stat_request+]</strong> найдено <strong>[+stat_total+]</strong> документов.</p>`
+	&noResult=`<p class="srch_res_info">По запросу <u>[+stat_request+]</u> ничего не найдено. Смягчите условия поиска</p>`
+	&ownerTPL=`@CODE: <p class="srch_res_info">По запросу <u>[+stat_request+]</u></p><div class="srch_res">[+dl.wrap+]</div>`
+	&tpl=`@CODE: <article class="srch_res_one"><header><h4><a href="[+url+]">[+title+]</a></h4></header><div class="srch_res_one_content"><p class="srch_ext">[+extract+]</p></div></article>`
+	&TplNextP=``
+	&TplPrevP=``
+  &paginationMeta=`1`
+  &TplWrapPaginate=`@CODE: <div class="paginate text-center"><ul class="pagination pagination--list">[+wrap+]</ul></div>`
+  &TplNextP=`@CODE: <li class="pagination--list--item next"><a role="button" class="icon-next" href="[+link+]"></a></li>`
+  &TplNextI=`@CODE: <li class="pagination--list--item next disabled"><span role="button" class="icon-next"></span></li>`
+  &TplPrevP=`@CODE: <li class="pagination--list--item prev"><a role="button" class="icon-prev" href="[+link+]"></a></li>`
+  &TplPrevI=`@CODE: <li class="pagination--list--item prev disabled"><span role="button" class="icon-prev"></span></li>`
+  &TplPage=`@CODE: <li class="pagination--list--item"><a role="button" href="[+link+]">[+num+]</a></li>`
+  &TplCurrentPage=`@CODE: <li class="pagination--list--item active"><span role="button">[+num+]</span></li>`
+  &TplDotsPage=`@CODE:<li class="pagination--list--item dots"><span role="button">...</span></li>`
+!][+pages+]</div></article></div></div><div class="secondary" id="secondary" role="complementary"><div class="widgets"><@IF:[*id:is(1)*]><div class="widget"><article class="widget_director"><header class="widget_director-header"><@IF:[(director_position:isnotempty)]><h3 class="widget_director-title"><strong>[(director_position)]:</strong></h3><@ENDIF><@IF:[(director:isnotempty)]><p class="widget_director-name"><strong>[(director)]</strong></p><@ENDIF><@IF:[(director_photo:isnotempty)]><p class="widget_director-header-img"><img src="[[thumb? &input=`[(director_photo)]` &options=`w=270,h=270,zc=C`]]" alt="[(director)]" loading="lazy"><@IF:[(director:isnotempty}]><span class="bvi-caption-alt">[(director)]</span><@ENDIF></p><@ENDIF></header><div class="widget_director-content"><dl><@IF:[(address:isnotempty)]><dt><p><strong>Адрес:</strong></p></dt><dd><p><i class="icon-home"></i>[(address)]</p></dd><@ENDIF><@IF:[(phones:isnotempty)]><dt><p><strong>Телефон:</strong></p></dt><dd><p><i class="icon-phone"></i>[(phones:nl2br)]</p></dd><@ENDIF><@IF:[(email:isnotempty)]><dt><p><strong>Электронный адрес:</strong></p></dt><dd><p><i class="icon-email"></i>{obfuscate}[(email)]{/obfuscate}</p></dd><@ENDIF><dt><p><strong>Сайт:</strong></p></dt><dd><p><i class="icon-home"></i><a href="[(site_url)]" target="_blank">[(site_url)]</a></p><@IF:[(vk_link_group:isnotempty)]><p><i class="icon-vk"></i><a href="[(vk_link_group)]" target="_blank">Группа в ВКонтакте</a></p><@ENDIF>
+<@IF:[(ok_link_group:isnotempty)]><p><i class="icon-ok"></i><a href="[(ok_link_group)]" target="_blank">Группа в Одноклассеиках</a></p><@ENDIF>
+<@IF:[(rutube_link_group:isnotempty)]><p><i class="icon-rutube"></i><a href="[(rutube_link_group)]" target="_blank">Канал на RUTUBE</a></p><@ENDIF>
+<@IF:[(tlg_link_group:isnotempty)]><p><i class="icon-telegram"></i><a href="[(tlg_link_group)]" target="_blank">Канал в Telegram</a></p><@ENDIF></dd></dl><p class="text-center"><button class="callme-btn btn btn-default" type="button" data-trigger="sendbot">ФОРМА ОБРАТНОЙ СВЯЗИ</button></p></div></article></div><@ENDIF><div class="widget eye-widget"><article class="widget-article"><div class="widget-article-content"><p class="eya-panel"><a>Версия для слабовидящих</a></p></div></article></div>[[multiTV?
+	&fromJson=`[(group_org)]`
+	&tvName=`group_org`
+	&display=`all`
+]][[multiTV?
+	&fromJson=`[(widgets_bar)]`
+	&tvName=`widgets_bar`
+	&display=`all`
+]]</div></div><div class="main-footer">[[multiTV? 
+	&fromJson=`[(govlist)]` 
+	&tvName=`govlist`
+	&display=`all`
+]]</div><!--InitFormSendBot-->[!FormLister?
+	&controller=`Form`
+	&formid=`sendbot`
+	&config=`sendbot:/comon/json`
+	&to=`[(email_to)]`
+	&noemail=`true`
+!]<!--FormSendBot--></div><footer class="footer bvi-no-styles" id="colophon" role="contentinfo"><div class="container bvi-no-styles"><div class="footer-row bvi-no-styles"><div class="footer-col-left bvi-no-styles"><p class="bvi-no-styles">Авторские права © [[GetDate? &str=`[(org_date)]`]] - [!$_SERVER['REQUEST_TIME']:dateFormat='Y'!] <a class="bvi-no-styles" href="[(site_url)]">[(site_name_org)]</a></p></div><div class="footer-col-center bvi-no-styles"><p class="bvi-no-styles"><a class="bvi-no-styles icon-rss" href="[(site_url)]rss.xml" target="_blank"></a></p></div><div class="footer-col-right bvi-no-styles"><p class="bvi-no-styles">Developed by: <a class="bvi-no-styles" href="https://github.com/ProjectSoft-STUDIONIONS" target="_blank">ProjectSoft © 2008 - [!$_SERVER['REQUEST_TIME']:dateFormat='Y'!]</a></p></div></div></div></footer><div class="fancybox__wrapper"></div></div><script src="/assets/templates/projectsoft/js/appjs.min.js?17397899038482"></script><script src="/viewer/fancybox.min.js?17397899038482"></script><@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]><script src="/assets/templates/projectsoft/js/bvi.min.js?17397899038482"></script><@ENDIF><@ENDIF><script src="/assets/templates/projectsoft/js/main.min.js?17397899038482"></script><style>body:not(.feast) {background-color: [(background_color)];<@IF:[(background_image:isnotempty)]>background-image: url([(background_image)]);<@ENDIF><@IF:[(background_attachment:neq(" "))]>background-attachment: [(background_attachment)];<@ENDIF><@IF:[(background_position:neq(" "))]>[(background_position)]<@ENDIF><@IF:[(background_repeat:neq(" "))]>[(background_repeat)]<@ENDIF><@IF:[(background_size:neq(" "))]>[(background_size)]<@ENDIF>}</style><@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]><!-- Yandex.Metrika counter --><script type="text/javascript" >(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym([(yandex_metrika)], "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });</script><noscript><div><img src="https://mc.yandex.ru/watch/[(yandex_metrika)]" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter --><@ENDIF><@ENDIF><div class="preloader"><div class="loader"></div></div></body></html>

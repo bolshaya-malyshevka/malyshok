@@ -1,0 +1,51 @@
+doctype html
+html(lang="ru" prefix="og: http://ogp.me/ns#")
+	include inc/head.pug
+	body
+		.body.bvi-no-styles
+			//- Шапка
+			header#masthead(role="banner")
+				include tpl/header.pug
+			//- Контент
+			.main
+				//- Основной блок
+				.primary
+					#content(role="main")
+						article(id!="page-[*id*]" class!="page page-[*id*] type-page")
+							header.entry-header
+								h1.entry-title
+									|[*longtitle:ifempty=`[*pagetitle*]`*]
+							.entry-content
+								//- Контент, Вывод дочерних ресурсов, Видео, PageBuilder
+								|[*content*][[DLMenu?
+								|	&parents=`[*id*]`
+								|	&maxDepth=`10`
+								|	&showParent=`0`
+								|	&urlScheme=`full`
+								|	&ownerTPL=`@CODE: <ul>[+wrap+]</ul>`
+								|	&rowTpl=`@CODE: <li><a href="[+url+]" [+link_attributes+]>[+title+]</a></li>`
+								|	&prepare=`\ProjectSoft\PrepareDL::prepareUrlDLMenu`
+								|	&rowClass=``
+								|	&firstClass=``
+								|	&lastClass=``
+								|	&levelClass=``
+								|	&webLinkClass=``
+								|	&parentClass=``
+								|	&hereClass=``
+								|	&activeClass=``
+								|	&oddClass=``
+								|	&evenClass=``
+								|]][*EvoVideo:is=``:then=` `:else=`{{@FILE assets/templates/projectsoft/tpl/get_evo_video.html}}`*][[PageBuilder]]
+						include inc/share.pug
+				//- Сайтбар
+				.secondary#secondary(role="complementary")
+					include tpl/widgets.pug
+				//- Вывод ссылок на Гос. Сайты
+				.main-footer
+					include tpl/sites_link.pug
+				//- Форма
+				include tpl/sendbot.pug
+			//- Подвал
+			include tpl/footer.pug
+		//- Скрипты
+		include inc/body_close.pug

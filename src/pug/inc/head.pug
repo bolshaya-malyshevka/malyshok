@@ -1,0 +1,41 @@
+head
+	base(href="[(site_url)]")
+	//- Content Type
+	meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+	meta(http-equiv="X-UA-Compatible" content="IE=EmulateIE9")
+	//- Viewport
+	meta(name="viewport" content="width=device-width, initial-scale=1")
+	//- CMS Magazine profile
+	meta(name="cmsmagazine" content="d8e7426ec72ad3e4ea38b09ebf01284")
+	//- Web Master Yandex
+	meta(name="yandex-verification" content="[(yandex_verification)]")
+	//- Skype disabled phone
+	meta(name="SKYPE_TOOLBAR" content ="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+	//- Default Theme
+	meta(name="color-scheme" content="only light")
+	meta(name="theme-color" content="#ffffff")
+	title
+		|[*titl*]
+	|[*noIndex*]
+	meta(name="title" content="[*titl:notags:strip*]")
+	meta(name="description" content="[*desc:notags:strip*]")
+	meta(name="keywords" content="[*keyw:notags:strip*]")
+	meta(name="author" content="[(site_name)]")
+	//- Open Graph
+	meta(name="og:url" content="[(site_url)][~[*id*]~]")
+	meta(property="og:type" content="website")
+	meta(name="og:title" content="[*titl:notags:strip*]")
+	meta(name="og:description" content="[*desc:notags:strip*]")
+	|[[ogImage]]
+	meta(name="twitter:card" content="summary_large_image")
+	//- Favicons
+	include ../inc/favicon.pug
+	link(type="text/css" rel="stylesheet" href="/assets/templates/projectsoft/css/bvi.min.css?" + hash)
+	link(type="text/css" rel="stylesheet" href="/assets/templates/projectsoft/css/main.min.css?" + hash)
+	|<@IF:[*template:neq(11)*]>
+	//- RSS
+	link(rel="alternate" type="application/rss+xml" title="RSS-лента [(site_name)]" href="/rss.xml")
+	|<@ENDIF><@IF:[*id:is(2)*]>
+	//- Canonical
+	link(rel="canonical" href="[(site_url)][~[*id*]~]")
+	|<@ENDIF>

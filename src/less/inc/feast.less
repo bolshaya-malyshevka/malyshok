@@ -1,0 +1,41 @@
+.feast {
+	&::before,
+	&::after {
+		content: "";
+		position: fixed;
+		top: 0;
+		height: 100%;
+		z-index: 0;
+		background-repeat: repeat-y;
+		background-attachment: fixed;
+	}
+	.body {
+		z-index: 2;
+	}
+	&.bvi-active {
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+	&_year {
+		background-image: url(/assets/templates/projectsoft/images/new-year.jpg);
+		background-attachment: fixed;
+		background-position: top center;
+		background-size: cover;
+		&::before,
+		&::after {
+			width: 55px;
+		}
+		&::before {
+			left: 0;
+			background-position: top left;
+			background-image: url(/assets/templates/projectsoft/images/new-year-left.png);
+		}
+		&::after {
+			right: 0;
+			background-position: 100% 0;
+			background-image: url(/assets/templates/projectsoft/images/new-year-right.png);
+		}
+	}
+}

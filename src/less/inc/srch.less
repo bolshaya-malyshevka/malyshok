@@ -1,0 +1,21 @@
+.srch {
+	&_res {
+		&_one {
+			.evoSearch_highlight {
+				background-color: yellow;
+			}
+			&::after {
+				content: "";
+				display: block;
+				box-shadow: 0px 1px 0px #ccc;
+				border-bottom: 1px solid transparent;
+				border-bottom-style: dotted;
+			}
+			&:last-child {
+				&::after {
+					display: none;
+				}
+			}
+		}
+	}
+}

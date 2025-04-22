@@ -43,7 +43,7 @@
 									<p class="site-title"><@IF:[*id:is(1)*]>[(site_name)]<@ELSE><a href="[(site_url)]">[(site_name)]</a><@ENDIF></p>
 									<p class="site-description">[(site_description)]</p>
 									<div id="search">
-										<form action="/search/" method="GET" data-id="search-form"><input type="text" name="search" value="[!$_GET['search']!]" placeholder="Поиск" required="required" />
+										<form action="/search/" method="GET" data-id="search-form"><input type="search" name="search" value="[!$_GET['search']!]" placeholder="Поиск" required="required" />
 											<button class="btn icon-search" type="submit"></button>
 										</form>
 									</div>

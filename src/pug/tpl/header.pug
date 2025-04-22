@@ -10,7 +10,7 @@
 				|[(site_description)]
 			#search
 				form(action="/search/" method="GET" data-id="search-form")
-					|<input type="text" name="search" value="[!$_GET['search']!]" placeholder="Поиск" required="required" />
+					|<input type="search" name="search" value="[!$_GET['search']!]" placeholder="Поиск" required="required" />
 					button.btn.icon-search(type="submit")
 	.header-slick
 		|<@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]>[[multiTV?

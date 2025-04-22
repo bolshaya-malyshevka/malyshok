@@ -600,13 +600,13 @@ module.exports = function(grunt) {
 		ftp_upload: {
 			default: {
 				auth: {
-					host: "bmalysch.minobr63.ru",
+					host: "malyshok.minobr63.ru",
 					port: 21,
-					authKey: 'default',
+					authKey: 'bmalysh',
 					authPath: '.ftppass'
 				},
 				src: 'site/assets/templates/projectsoft',
-				dest: 'www/bmalysch.minobr63.ru/assets/templates/projectsoft',
+				dest: 'assets/templates/projectsoft',
 			}
 		},
 	});

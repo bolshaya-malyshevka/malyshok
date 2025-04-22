@@ -5296,15 +5296,13 @@ h6 {
 
 .widget_director-content dl dd {
   margin-left: 40px;
+  margin-bottom: 0.5em;
 }
 
 .widget_director-content dl dd p {
   position: relative;
-  margin-bottom: unset;
-}
-
-.widget_director-content dl dd p:last-child {
-  margin-bottom: revert;
+  margin-bottom: 0.5em;
+  margin-top: 0.2em;
 }
 
 .widget_director-content dl dd p i {

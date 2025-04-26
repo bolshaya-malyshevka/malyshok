@@ -159,6 +159,7 @@ site/.*
 site/*.md
 site/*.php
 site/*.txt
+*.txt
 
 # Food
 site/food
